@@ -1,12 +1,12 @@
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, Mail, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary" />
-
+      
       {/* Floating elements */}
       <motion.div
         animate={{ y: [-20, 20, -20] }}
@@ -55,13 +55,13 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex justify-center gap-4 mb-12"
         >
-          <a href="https://github.com/S2800-0" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
-            <Github size={20} />
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
+            <GithubIcon size={20} />
           </a>
-          <a href="https://www.linkedin.com/in/shahesta-salama-396566320/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
-            <Linkedin size={20} />
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
+            <LinkedinIcon size={20} />
           </a>
-          <a href="mailto:shahesta0028@gmail.com" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
+          <a href="mailto:shahesta@email.com" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
             <Mail size={20} />
           </a>
         </motion.div>
