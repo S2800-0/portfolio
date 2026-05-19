@@ -1,9 +1,18 @@
 import { motion } from 'motion/react';
-import { Play, ArrowRight } from 'lucide-react';
+import { Play, ArrowRight, FileCode } from 'lucide-react';
 import { useState } from 'react';
+
+// Mock thumbnail colors for each category
+const categoryColors = {
+  'DEPI Data Science Internship': 'from-blue-600 to-purple-600',
+  'Full-Stack Software Development Internship': 'from-emerald-500 to-teal-600',
+  'Technical Projects': 'from-orange-500 to-red-500',
+};
 
 const ProjectCard = ({ project, onSelect }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const gradient = categoryColors[project.category] || 'from-gray-600 to-gray-700';
 
   return (
     <motion.div
@@ -17,19 +26,25 @@ const ProjectCard = ({ project, onSelect }) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onSelect(project)}
     >
-      {/* Thumbnail with hover zoom */}
+      {/* Thumbnail with gradient background */}
       <div className="relative h-56 overflow-hidden bg-primary">
         <motion.div
-          className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary to-secondary"
-          animate={{ scale: isHovered ? 1.1 : 1 }}
+          className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${gradient}`}
+          animate={{ scale: isHovered ? 1.05 : 1 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
-          <span className="text-6xl">🎯</span>
+          {/* Project initial/icon */}
+          <span className="text-5xl font-bold text-white/90 mb-2">
+            {project.title.charAt(0)}
+          </span>
+          <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
+            {project.category}
+          </span>
         </motion.div>
-        
+
         {/* Overlay on hover */}
         <motion.div
-          className="absolute inset-0 bg-primary/80 flex items-center justify-center"
+          className="absolute inset-0 bg-black/60 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
@@ -40,13 +55,22 @@ const ProjectCard = ({ project, onSelect }) => {
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             className="flex items-center gap-2 text-white font-medium"
           >
-            <Play size={20} />
-            <span>Click to Explore</span>
+            {project.codeFiles && project.codeFiles.length > 0 ? (
+              <>
+                <FileCode size={20} />
+                <span>View Code & Details</span>
+              </>
+            ) : (
+              <>
+                <Play size={20} />
+                <span>Click to Explore</span>
+              </>
+            )}
           </motion.div>
         </motion.div>
 
         {/* Category badge */}
-        <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent/90 text-white text-xs font-medium">
+        <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs font-medium">
           {project.category}
         </div>
       </div>
@@ -59,7 +83,7 @@ const ProjectCard = ({ project, onSelect }) => {
         <p className="text-gray-400 text-sm mb-4 line-clamp-2">
           {project.shortDesc}
         </p>
-        
+
         {/* Tech stack pills */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tech.slice(0, 3).map((t) => (

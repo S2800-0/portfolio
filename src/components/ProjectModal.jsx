@@ -3,7 +3,7 @@ import { X, ExternalLink, Calendar, Tag, FileCode } from 'lucide-react';
 import { useState } from 'react';
 import CodeViewer from './CodeViewer';
 
-// Inline GitHub icon (no lucide-react dependency)
+// Inline GitHub icon
 const GithubIcon = ({ size = 18 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
@@ -41,20 +41,6 @@ const ProjectModal = ({ project, onClose }) => {
             >
               <X size={20} />
             </button>
-
-            {/* Video Section */}
-            <div className="relative aspect-video bg-primary flex items-center justify-center">
-              <video
-                src={project.videoUrl}
-                controls
-                autoPlay
-                muted
-                loop
-                className="w-full h-full object-cover"
-                controlsList="nodownload"
-                disablePictureInPicture
-              />
-            </div>
 
             {/* Content */}
             <div className="p-8">
@@ -95,7 +81,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               </div>
 
-              {/* Code Files Section */}
+              {/* Code Files Section - Notebook Style */}
               {project.codeFiles && project.codeFiles.length > 0 && (
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-white mb-3">Code Files</h3>

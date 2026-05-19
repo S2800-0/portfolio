@@ -5,13 +5,21 @@ import { useState, useEffect } from 'react';
 const CodeViewer = ({ fileUrl, fileName, onClose }) => {
   const [code, setCode] = useState('');
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (fileUrl) {
+      setLoading(true);
       fetch(fileUrl)
         .then(res => res.text())
-        .then(text => setCode(text))
-        .catch(() => setCode('// Error loading file'));
+        .then(text => {
+          setCode(text);
+          setLoading(false);
+        })
+        .catch(() => {
+          setCode('// Error loading file');
+          setLoading(false);
+        });
     }
   }, [fileUrl]);
 
@@ -29,7 +37,7 @@ const CodeViewer = ({ fileUrl, fileName, onClose }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+        className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
         onClick={onClose}
       >
         <motion.div
@@ -65,9 +73,15 @@ const CodeViewer = ({ fileUrl, fileName, onClose }) => {
 
           {/* Code Content */}
           <div className="overflow-auto max-h-[calc(90vh-4rem)] p-6">
-            <pre className="font-mono text-sm leading-relaxed">
-              <code className="text-gray-300 whitespace-pre-wrap">{code}</code>
-            </pre>
+            {loading ? (
+              <div className="flex items-center justify-center h-40 text-gray-500">
+                <span className="animate-pulse">Loading code...</span>
+              </div>
+            ) : (
+              <pre className="font-mono text-sm leading-relaxed">
+                <code className="text-gray-300 whitespace-pre-wrap">{code}</code>
+              </pre>
+            )}
           </div>
         </motion.div>
       </motion.div>
