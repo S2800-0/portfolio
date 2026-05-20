@@ -1,11 +1,10 @@
 import { motion } from 'motion/react';
-import { ArrowRight, FileCode, GitBranch, Clock, CheckCircle } from 'lucide-react';
+import { ArrowRight, FileCode, GitBranch, Clock, CheckCircle, Play, Image } from 'lucide-react';
 import { useState } from 'react';
 
 const ProjectCard = ({ project, onSelect }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Status colors
   const statusConfig = {
     'completed': { icon: CheckCircle, color: 'text-emerald-400', bg: 'bg-emerald-500/10', label: 'Completed' },
     'in-progress': { icon: Clock, color: 'text-amber-400', bg: 'bg-amber-500/10', label: 'In Progress' }
@@ -13,6 +12,12 @@ const ProjectCard = ({ project, onSelect }) => {
 
   const status = statusConfig[project.status] || statusConfig['completed'];
   const StatusIcon = status.icon;
+
+  // Check what content is available
+  const hasMedia = project.videoUrl || project.thumbnail;
+  const hasCode = project.codeFiles && project.codeFiles.length > 0;
+  const hasResources = project.resources && project.resources.length > 0;
+  const hasGithub = !!project.githubUrl;
 
   return (
     <motion.div
@@ -26,15 +31,19 @@ const ProjectCard = ({ project, onSelect }) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onSelect(project)}
     >
-      {/* Top bar with status */}
+      {/* Top bar with status and available content indicators */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-800/50">
         <div className={`flex items-center gap-2 px-2.5 py-1 rounded-full ${status.bg}`}>
           <StatusIcon size={12} className={status.color} />
           <span className={`text-xs font-medium ${status.color}`}>{status.label}</span>
         </div>
-        {project.hasGithub && (
-          <GitBranch size={14} className="text-gray-500" />
-        )}
+        
+        {/* Content availability indicators */}
+        <div className="flex items-center gap-2">
+          {hasMedia && <Play size={12} className="text-gray-500" />}
+          {hasCode && <FileCode size={12} className="text-gray-500" />}
+          {hasGithub && <GitBranch size={12} className="text-gray-500" />}
+        </div>
       </div>
 
       {/* Content */}
