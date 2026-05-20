@@ -7,23 +7,17 @@ export const projects = [
     fullDesc: `Comprehensive analysis of SuperStore order data including data cleaning, type conversion, feature engineering (profit margin, unit price, shipping days), outlier detection using IQR method, and categorical encoding. Generated insights on sales by category and profit distributions.`,
     tech: ['Python', 'Pandas', 'NumPy', 'Seaborn', 'Matplotlib'],
     
-    // Media - provide if available
-    videoUrl: null,  // './videos/superstore-demo.mp4'
-    thumbnail: null, // './images/superstore-thumb.jpg'
+    videoUrl: null,
+    thumbnail: null,
     
-    // Code files
     codeFiles: [
-      { name: 'SuperStore_Analysis.ipynb', url: './public/code/superstore/App.ipynb' }
+      { name: 'SuperStore_Analysis.ipynb', url: '/portfolio/code/superstore/App.ipynb' }
     ],
     
-    // Resources/Attachments
     resources: [
       { name: 'Dataset', url: 'https://www.kaggle.com/datasets/thuandao/superstore-sales-analytics', type: 'dataset' },
-    //{ name: 'Project Report', url: './reports/superstore/report.pdf', type: 'document' },
-    //{ name: 'Presentation', url: './reports/superstore/presentation.pptx', type: 'presentation' }
     ],
     
-    // External links
     githubUrl: null,
     liveUrl: null,
     
@@ -43,12 +37,11 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'Burnout_Analysis.ipynb', url: './public/code/burnout/Burnout_level.ipynb' }
+      { name: 'Burnout_Analysis.ipynb', url: '/portfolio/code/burnout/Burnout_level.ipynb' }
     ],
     
     resources: [
       { name: 'Dataset 1', url: 'https://www.kaggle.com/datasets/sehaj1104/student-mental-health-and-burnout-dataset', type: 'dataset' },
-  
     ],
     
     githubUrl: null,
@@ -70,11 +63,11 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'BMW_Analysis.ipynb', url: './public/code/bmw/Car_.ipynb' }
+      { name: 'BMW_Analysis.ipynb', url: '/portfolio/code/bmw/Car_.ipynb' }
     ],
     
     resources: [
-      { name: 'Dataset', url: './public/data/bmw_cars_market_dataset_synthetic.csv', type: 'dataset' },
+      { name: 'Dataset', url: '/portfolio/data/bmw_cars_market_dataset_synthetic.csv', type: 'dataset' },
     ],
     
     githubUrl: null,
@@ -96,7 +89,7 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'Adult_Income_Analysis.ipynb', url: './public/code/adult/code.ipynb' }
+      { name: 'Adult_Income_Analysis.ipynb', url: '/portfolio/code/adult/code.ipynb' }
     ],
     
     resources: [
@@ -121,7 +114,7 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
-    gifUrl:'./public/gifs/minly-demo.gif',
+    gifUrl: '/portfolio/gifs/minly-demo.gif',
     
     codeFiles: [],
     
@@ -209,8 +202,8 @@ export const projects = [
     fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and real-time recognition. Built a robust computer vision pipeline utilizing OpenCV and ImageDataGenerator for real-time frame capture, preprocessing, and model inference.`,
     tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'MobileNetV2'],
     
-    videoUrl: '',  // Add when available: './videos/sign-language-demo.mp4'
-    thumbnail: null, // Add when available: './images/sign-language-thumb.jpg'
+    videoUrl: null,
+    thumbnail: null,
     
     codeFiles: [],
     
@@ -233,13 +226,12 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
-    gifUrl: 'public/gifs/spellchecker-demo.gif',
+    gifUrl: '/portfolio/gifs/spellchecker-demo.gif',
 
     codeFiles: [],
     
     resources: [
-      { name: 'SpellChecker.zip', url: '/portfolio/public/code/SpellChecker/HMS DS.zip' }
-    
+      { name: 'SpellChecker.zip', url: '/portfolio/code/SpellChecker/HMS DS.zip' }
     ],
     
     githubUrl: null,
