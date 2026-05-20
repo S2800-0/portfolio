@@ -8,19 +8,19 @@ export const projects = [
     tech: ['Python', 'Pandas', 'NumPy', 'Seaborn', 'Matplotlib'],
     
     // Media - provide if available
-    videoUrl: null,  // '/Portfolio/videos/superstore-demo.mp4'
-    thumbnail: null, // '/Portfolio/images/superstore-thumb.jpg'
+    videoUrl: null,  // './videos/superstore-demo.mp4'
+    thumbnail: null, // './images/superstore-thumb.jpg'
     
     // Code files
     codeFiles: [
-      { name: 'SuperStore_Analysis.ipynb', url: 'public/code/superstore/App.ipynb' }
+      { name: 'SuperStore_Analysis.ipynb', url: './public/code/superstore/App.ipynb' }
     ],
     
     // Resources/Attachments
     resources: [
       { name: 'Dataset', url: 'https://www.kaggle.com/datasets/thuandao/superstore-sales-analytics', type: 'dataset' },
-      //{ name: 'Project Report', url: '/Portfolio/reports/superstore/report.pdf', type: 'document' },
-      //{ name: 'Presentation', url: '/Portfolio/reports/superstore/presentation.pptx', type: 'presentation' }
+    //{ name: 'Project Report', url: './reports/superstore/report.pdf', type: 'document' },
+    //{ name: 'Presentation', url: './reports/superstore/presentation.pptx', type: 'presentation' }
     ],
     
     // External links
@@ -43,7 +43,7 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'Burnout_Analysis.ipynb', url: 'public/code/burnout/Burnout_level.ipynb' }
+      { name: 'Burnout_Analysis.ipynb', url: './public/code/burnout/Burnout_level.ipynb' }
     ],
     
     resources: [
@@ -70,11 +70,11 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'BMW_Analysis.ipynb', url: 'public/code/bmw/Car_.ipynb' }
+      { name: 'BMW_Analysis.ipynb', url: './public/code/bmw/Car_.ipynb' }
     ],
     
     resources: [
-      { name: 'Dataset', url: 'public/data/bmw_cars_market_dataset_synthetic.csv', type: 'dataset' },
+      { name: 'Dataset', url: './public/data/bmw_cars_market_dataset_synthetic.csv', type: 'dataset' },
     ],
     
     githubUrl: null,
@@ -96,7 +96,7 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'Adult_Income_Analysis.ipynb', url: 'public/code/adult/code.ipynb' }
+      { name: 'Adult_Income_Analysis.ipynb', url: './public/code/adult/code.ipynb' }
     ],
     
     resources: [
@@ -121,7 +121,7 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
-    gifUrl:'public/gifs/minly-demo.gif',
+    gifUrl:'./public/gifs/minly-demo.gif',
     
     codeFiles: [],
     
@@ -209,8 +209,8 @@ export const projects = [
     fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and real-time recognition. Built a robust computer vision pipeline utilizing OpenCV and ImageDataGenerator for real-time frame capture, preprocessing, and model inference.`,
     tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'MobileNetV2'],
     
-    videoUrl: '',  // Add when available: '/Portfolio/videos/sign-language-demo.mp4'
-    thumbnail: null, // Add when available: '/Portfolio/images/sign-language-thumb.jpg'
+    videoUrl: '',  // Add when available: './videos/sign-language-demo.mp4'
+    thumbnail: null, // Add when available: './images/sign-language-thumb.jpg'
     
     codeFiles: [],
     
@@ -238,7 +238,7 @@ export const projects = [
     codeFiles: [],
     
     resources: [
-      { name: 'SpellChecker.zip', url: '/Users/shahy/Documents/GitHub/Portfolio/public/code/SpellChecker/HMS DS.zip' }
+      { name: 'SpellChecker.zip', url: './public/code/SpellChecker/HMS DS.zip' }
     
     ],
     
