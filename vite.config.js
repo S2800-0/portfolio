@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   
   // MUST match your GitHub repo name exactly
-  base: './',
+  base: '/portfolio/',
   
   build: {
     outDir: 'dist',

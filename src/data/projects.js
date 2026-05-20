@@ -238,7 +238,7 @@ export const projects = [
     codeFiles: [],
     
     resources: [
-      { name: 'SpellChecker.zip', url: './public/code/SpellChecker/HMS DS.zip' }
+      { name: 'SpellChecker.zip', url: '/portfolio/public/code/SpellChecker/HMS DS.zip' }
     
     ],
     
