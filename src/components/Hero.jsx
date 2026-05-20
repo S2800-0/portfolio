@@ -74,10 +74,10 @@ const Hero = () => {
           <a href="https://github.com/S2800-0" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
             <GithubIcon size={20} />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
+          <a href="https://www.linkedin.com/in/shahesta-salama-396566320/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
             <LinkedinIcon size={20} />
           </a>
-          <a href="mailto:shahesta@email.com" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
+          <a href="mailto:shahesta0028@gmail.com" className="p-3 rounded-full bg-secondary text-white hover:bg-accent transition-colors">
             <Mail size={20} />
           </a>
         </motion.div>

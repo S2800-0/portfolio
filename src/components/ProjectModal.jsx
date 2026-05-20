@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Calendar, Tag, FileCode, Play, Image, Download } from 'lucide-react';
+import { X, ExternalLink, Calendar, Tag, FileCode, Play, Download } from 'lucide-react';
 import { useState } from 'react';
 import NotebookViewer from './NotebookViewer';
 
@@ -16,8 +16,8 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   // Check what's available
+  const hasGif = !!project.gifUrl;
   const hasVideo = !!project.videoUrl;
-  const hasThumbnail = !!project.thumbnail;
   const hasCode = project.codeFiles && project.codeFiles.length > 0;
   const hasResources = project.resources && project.resources.length > 0;
   const hasGithub = !!project.githubUrl;
@@ -49,7 +49,7 @@ const ProjectModal = ({ project, onClose }) => {
               <X size={20} />
             </button>
 
-            {/* Media Section - Video or Thumbnail (only if available) */}
+            {/* Video Section - ONLY if videoUrl is provided */}
             {hasVideo && (
               <div className="relative aspect-video bg-primary">
                 <video
@@ -63,14 +63,16 @@ const ProjectModal = ({ project, onClose }) => {
                 />
               </div>
             )}
-            
-            {!hasVideo && hasThumbnail && (
-              <div className="relative aspect-video bg-primary flex items-center justify-center">
+
+            {/* GIF Banner - ONLY if no video but has GIF */}
+            {!hasVideo && hasGif && (
+              <div className="relative h-64 bg-primary overflow-hidden">
                 <img 
-                  src={project.thumbnail} 
+                  src={project.gifUrl} 
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary to-transparent" />
               </div>
             )}
 
@@ -118,7 +120,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               </div>
 
-              {/* Notebook Files Section (only if available) */}
+              {/* Notebook Files - ONLY if available */}
               {hasCode && (
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-white mb-3">Notebook Files</h3>
@@ -140,7 +142,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               )}
 
-              {/* Resources/Attachments Section (only if available) */}
+              {/* Resources - ONLY if available */}
               {hasResources && (
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-white mb-3">Resources</h3>
@@ -163,7 +165,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               )}
 
-              {/* Links - GitHub & Live Demo (only if available) */}
+              {/* Links - ONLY if available */}
               <div className="flex gap-4 flex-wrap">
                 {hasGithub && (
                   <a
@@ -193,7 +195,7 @@ const ProjectModal = ({ project, onClose }) => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Notebook Viewer Overlay */}
+      {/* Notebook Viewer */}
       <NotebookViewer
         fileUrl={selectedNotebook?.url}
         fileName={selectedNotebook?.name}

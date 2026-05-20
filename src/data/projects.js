@@ -13,14 +13,14 @@ export const projects = [
     
     // Code files
     codeFiles: [
-      { name: 'SuperStore_Analysis.ipynb', url: '/Portfolio/notebooks/superstore/SuperStore_Analysis.ipynb' }
+      { name: 'SuperStore_Analysis.ipynb', url: 'public/code/superstore/App.ipynb' }
     ],
     
     // Resources/Attachments
     resources: [
-      { name: 'Dataset', url: '/Portfolio/datasets/superstore/SuperStoreOrders.csv', type: 'dataset' },
-      { name: 'Project Report', url: '/Portfolio/reports/superstore/report.pdf', type: 'document' },
-      { name: 'Presentation', url: '/Portfolio/reports/superstore/presentation.pptx', type: 'presentation' }
+      { name: 'Dataset', url: 'https://www.kaggle.com/datasets/thuandao/superstore-sales-analytics', type: 'dataset' },
+      //{ name: 'Project Report', url: '/Portfolio/reports/superstore/report.pdf', type: 'document' },
+      //{ name: 'Presentation', url: '/Portfolio/reports/superstore/presentation.pptx', type: 'presentation' }
     ],
     
     // External links
@@ -43,13 +43,12 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'Burnout_Analysis.ipynb', url: '/Portfolio/notebooks/burnout/Burnout_Analysis.ipynb' }
+      { name: 'Burnout_Analysis.ipynb', url: 'public/code/burnout/Burnout_level.ipynb' }
     ],
     
     resources: [
-      { name: 'Dataset 1', url: '/Portfolio/datasets/burnout/student_mental_health_burnout.csv', type: 'dataset' },
-      { name: 'Dataset 2', url: '/Portfolio/datasets/burnout/student_mental_health_burnout_2.csv', type: 'dataset' },
-      { name: 'Project Report', url: '/Portfolio/reports/burnout/report.pdf', type: 'document' }
+      { name: 'Dataset 1', url: 'https://www.kaggle.com/datasets/sehaj1104/student-mental-health-and-burnout-dataset', type: 'dataset' },
+  
     ],
     
     githubUrl: null,
@@ -71,12 +70,11 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'BMW_Analysis.ipynb', url: '/Portfolio/notebooks/bmw/BMW_Analysis.ipynb' }
+      { name: 'BMW_Analysis.ipynb', url: 'public/code/bmw/Car_.ipynb' }
     ],
     
     resources: [
-      { name: 'Dataset', url: '/Portfolio/datasets/bmw/bmw_cars_market_dataset_synthetic.csv', type: 'dataset' },
-      { name: 'Project Report', url: '/Portfolio/reports/bmw/report.pdf', type: 'document' }
+      { name: 'Dataset', url: 'public/data/bmw_cars_market_dataset_synthetic.csv', type: 'dataset' },
     ],
     
     githubUrl: null,
@@ -98,12 +96,11 @@ export const projects = [
     thumbnail: null,
     
     codeFiles: [
-      { name: 'Adult_Income_Analysis.ipynb', url: '/Portfolio/notebooks/adult/Adult_Income_Analysis.ipynb' }
+      { name: 'Adult_Income_Analysis.ipynb', url: 'public/code/adult/code.ipynb' }
     ],
     
     resources: [
-      { name: 'Dataset', url: '/Portfolio/datasets/adult/adult.csv', type: 'dataset' },
-      { name: 'Project Report', url: '/Portfolio/reports/adult/report.pdf', type: 'document' }
+      { name: 'Dataset', url: 'https://www.kaggle.com/datasets/uciml/adult-census-income', type: 'dataset' },
     ],
     
     githubUrl: null,
@@ -122,8 +119,9 @@ export const projects = [
     fullDesc: `Designed end-to-end ERD schemas and built scalable REST APIs with TypeORM/PostgreSQL, ensuring clean data structures for complex relational datasets. Integrated third-party APIs to aggregate real-time movie and actor data, enabling dynamic analytics and search functionality. Translated Figma wireframes into responsive UI components while maintaining data integrity across frontend and backend systems.`,
     tech: ['React', 'Nest.js', 'TypeORM', 'PostgreSQL', 'Figma', 'Git/GitHub'],
     
-    videoUrl: "/Users/shahy/Documents/GitHub/Portfolio/public/videos/minly-demo.mp4" ,
-    thumbnail: "/Users/shahy/Documents/GitHub/Portfolio/public/images/minly-thumb.png",
+    videoUrl: null,
+    thumbnail: null,
+    gifUrl:'public/gifs/minly-demo.gif',
     
     codeFiles: [],
     
@@ -211,7 +209,7 @@ export const projects = [
     fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and real-time recognition. Built a robust computer vision pipeline utilizing OpenCV and ImageDataGenerator for real-time frame capture, preprocessing, and model inference.`,
     tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'MobileNetV2'],
     
-    videoUrl: 'public/videos/spell-checker-demo.mp4',  // Add when available: '/Portfolio/videos/sign-language-demo.mp4'
+    videoUrl: '',  // Add when available: '/Portfolio/videos/sign-language-demo.mp4'
     thumbnail: null, // Add when available: '/Portfolio/images/sign-language-thumb.jpg'
     
     codeFiles: [],
@@ -235,14 +233,16 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
+    gifUrl: 'public/gifs/spellchecker-demo.gif',
+
+    codeFiles: [],
     
-    codeFiles: [
+    resources: [
       { name: 'SpellChecker.zip', url: '/Users/shahy/Documents/GitHub/Portfolio/public/code/SpellChecker/HMS DS.zip' }
+    
     ],
     
-    resources: [],
-    
-    githubUrl: 'https://github.com/S2800-0/spell-checker',
+    githubUrl: null,
     liveUrl: null,
     
     category: 'Technical Projects',
