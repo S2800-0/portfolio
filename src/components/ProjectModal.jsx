@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Calendar, Tag, FileCode } from 'lucide-react';
+import { X, ExternalLink, Calendar, Tag, FileCode, GitBranch } from 'lucide-react';
 import { useState } from 'react';
-import CodeViewer from './CodeViewer';
+import NotebookViewer from './NotebookViewer';
 
 // Inline GitHub icon
 const GithubIcon = ({ size = 18 }) => (
@@ -12,7 +12,7 @@ const GithubIcon = ({ size = 18 }) => (
 );
 
 const ProjectModal = ({ project, onClose }) => {
-  const [selectedCode, setSelectedCode] = useState(null);
+  const [selectedNotebook, setSelectedNotebook] = useState(null);
 
   if (!project) return null;
 
@@ -57,6 +57,11 @@ const ProjectModal = ({ project, onClose }) => {
                       <Tag size={14} />
                       {project.category}
                     </span>
+                    {project.status === 'in-progress' && (
+                      <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-xs font-medium">
+                        In Progress
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -81,15 +86,18 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               </div>
 
-              {/* Code Files Section - Notebook Style */}
+              {/* Notebook Files Section */}
               {project.codeFiles && project.codeFiles.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-white mb-3">Code Files</h3>
+                  <h3 className="text-lg font-semibold text-white mb-3">Notebook Files</h3>
                   <div className="flex flex-wrap gap-3">
                     {project.codeFiles.map((file) => (
                       <button
                         key={file.name}
-                        onClick={() => setSelectedCode(file)}
+                        onClick={() => setSelectedNotebook({
+                          ...file,
+                          resources: project.resources
+                        })}
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e1e1e] border border-gray-700 text-gray-300 hover:border-yellow-500 hover:text-yellow-400 transition-colors"
                       >
                         <FileCode size={16} />
@@ -100,39 +108,42 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               )}
 
-              {/* Links */}
-              <div className="flex gap-4">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-medium hover:bg-gray-200 transition-colors"
-                >
-                  <GithubIcon size={18} />
-                  View Code
-                </a>
-                {project.liveUrl && (
+              {/* GitHub Link - Only if hasGithub */}
+              {project.hasGithub && project.githubUrl && (
+                <div className="flex gap-4">
                   <a
-                    href={project.liveUrl}
+                    href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-600 text-white font-medium hover:border-accent hover:text-accent transition-colors"
+                    className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary font-medium hover:bg-gray-200 transition-colors"
                   >
-                    <ExternalLink size={18} />
-                    Live Demo
+                    <GithubIcon size={18} />
+                    View on GitHub
                   </a>
-                )}
-              </div>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-600 text-white font-medium hover:border-accent hover:text-accent transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Code Viewer Overlay */}
-      <CodeViewer
-        fileUrl={selectedCode?.url}
-        fileName={selectedCode?.name}
-        onClose={() => setSelectedCode(null)}
+      {/* Notebook Viewer Overlay */}
+      <NotebookViewer
+        fileUrl={selectedNotebook?.url}
+        fileName={selectedNotebook?.name}
+        resources={selectedNotebook?.resources}
+        onClose={() => setSelectedNotebook(null)}
       />
     </>
   );
