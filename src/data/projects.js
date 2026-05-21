@@ -118,7 +118,9 @@ export const projects = [
     
     codeFiles: [],
     
-    resources: [],
+    resources: [
+      { name: 'Full video', url: '/portfolio/videos/minly-demo.mp4' }
+    ],
     
     githubUrl: 'https://github.com/S2800-0/FullStack-Movie-Database',
     liveUrl: null,
@@ -217,8 +219,37 @@ export const projects = [
     status: 'completed'
   },
   
+
   {
     id: 10,
+    title: 'Pneumonia Disease Detection Using Chest X-Rays',
+    shortDesc: 'Real-time detction using Machine Learning and Neural Networks',
+    fullDesc: `The deep learning algorithms chosen for the project are CNN and the pretrained model ResNet-50. CNN was considered due to its ability to recognize spatial hierarchies, capture details and patterns in chest X-rays, and effectively differentiate between normal and lung-infected chest X-rays. ResNet-50 has an architecture with 50 layers, trained on ImageNet. ResNet-50 was chosen for the research due to its deep architecture and ability to learn the features that are complex in the images.`,
+    tech: ['CNN', 'ResNet-50', 'VGG16', 'Algorithms', 'CustomCNN'],
+    
+    videoUrl: null,
+    thumbnail: null,
+    gifUrl: '/portfolio/gifs/P_detection.gif',
+
+    codeFiles: [
+      { name: 'Pneumonia Detection', url: '/portfolio/code/PuneomiaDetection/Pdetection.ipynb'}
+    ],
+    
+    resources: [,
+      { name: 'Full Video' , url: '/portfolio/videos/P_detction-Demo.mp4' },
+      { name: 'Dataset' , url: 'https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia'},
+    ],
+    
+    githubUrl: null,
+    liveUrl: null,
+    
+    category: 'Technical Projects',
+    date: 'May 2026',
+    status: 'completed'
+  },
+
+  {
+    id: 11,
     title: 'Spell Checker Desktop Application',
     shortDesc: 'Real-time spell checker with Qt GUI and intelligent suggestions',
     fullDesc: `Designed and implemented a spell checker desktop application in C++ with Qt Creator, integrating a GUI with real-time spelling validation and dynamic suggestion lists for user-friendly interaction. Added support for real-time spelling validation and automated suggestion generation, improving text accuracy and user experience.`,
@@ -231,7 +262,8 @@ export const projects = [
     codeFiles: [],
     
     resources: [
-      { name: 'SpellChecker.zip', url: '/portfolio/code/SpellChecker/HMS DS.zip' }
+      { name: 'SpellChecker.zip', url: '/portfolio/code/SpellChecker/HMS DS.zip' },
+      { name: 'Full Video' , url: '/portfolio/videos/spell-checker-demo.mp4' },
     ],
     
     githubUrl: null,
