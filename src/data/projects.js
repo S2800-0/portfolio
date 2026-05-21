@@ -134,8 +134,8 @@ export const projects = [
   {
     id: 6,
     title: '[WIP] Market Data Pipeline',
-    shortDesc: 'Real-time market data ingestion pipeline mirroring Thndr tech stack — SQL + Python hardening',
-    fullDesc: `Building a production-grade market data pipeline that ingests real-time financial data, processes it through Kafka/Redis streams, stores in TimescaleDB, and exposes via REST API. This project directly mirrors Thndr's infrastructure stack and demonstrates data engineering at scale.`,
+    shortDesc: 'Real-time market data ingestion pipeline — SQL + Python hardening',
+    fullDesc: `Building a production-grade market data pipeline that ingests real-time financial data, processes it through Kafka/Redis streams, stores in TimescaleDB, and exposes via REST API. `,
     tech: ['Python', 'SQL', 'Kafka', 'Redis', 'TimescaleDB', 'FastAPI'],
     
     videoUrl: null,
@@ -156,8 +156,8 @@ export const projects = [
   {
     id: 7,
     title: '[WIP] Time-Series ML Predictor',
-    shortDesc: 'ML model for financial time-series forecasting — research side for quant/data science roles',
-    fullDesc: `Developing a time-series machine learning model for stock price prediction using LSTM/Transformer architectures. Includes feature engineering from OHLCV data, backtesting framework, and risk-adjusted performance metrics. Shows understanding of the research side, not just data plumbing.`,
+    shortDesc: 'ML model for financial time-series forecasting ',
+    fullDesc: `Developing a time-series machine learning model for stock price prediction using LSTM/Transformer architectures. Includes feature engineering from OHLCV data, backtesting framework, and risk-adjusted performance metrics. `,
     tech: ['Python', 'TensorFlow', 'PyTorch', 'Pandas', 'NumPy', 'Backtrader'],
     
     videoUrl: null,
@@ -178,8 +178,8 @@ export const projects = [
   {
     id: 8,
     title: '[WIP] Finance Dashboard',
-    shortDesc: 'End-to-end finance dashboard proving full-stack credibility for data engineering roles',
-    fullDesc: `Building a real-time finance dashboard with React frontend, Node.js backend, and PostgreSQL database. Features portfolio tracking, P&L visualization, risk metrics, and alert system. Proves ability to ship end-to-end products, which is rare in data engineering applicants.`,
+    shortDesc: 'End-to-end finance dashboard ',
+    fullDesc: `Building a real-time finance dashboard with React frontend, Node.js backend, and PostgreSQL database. Features portfolio tracking, P&L visualization, risk metrics, and alert system.`,
     tech: ['React', 'Node.js', 'PostgreSQL', 'D3.js', 'WebSockets', 'Docker'],
     
     videoUrl: null,
