@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Calendar, Tag, FileCode, Play } from 'lucide-react';
+import { X, ExternalLink, Calendar, Tag, FileCode, Play, Download } from 'lucide-react';
 import { useState } from 'react';
 import NotebookViewer from './NotebookViewer';
 
