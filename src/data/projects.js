@@ -9,6 +9,7 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
+    gifUrl: '/portfolio/gifs/storefront.gif',
     
     codeFiles: [
       { name: 'SuperStore_Analysis.ipynb', url: '/portfolio/code/superstore/App.ipynb' }
@@ -35,6 +36,7 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
+    gifUrl: '/portfolio/gifs/burnoutanaylysis.gif',
     
     codeFiles: [
       { name: 'Burnout_Analysis.ipynb', url: '/portfolio/code/burnout/Burnout_level.ipynb' }
@@ -87,6 +89,7 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
+    gifUrl: '/portfolio/gifs/adultconceus.gif',
     
     codeFiles: [
       { name: 'Adult_Income_Analysis.ipynb', url: '/portfolio/code/adult/code.ipynb' }
@@ -203,7 +206,7 @@ export const projects = [
     fullDesc: `  configuration of a three-floor hotel network built in Cisco Packet Tracer. The network connects nine departments across three floors using VLAN segmentation, inter-VLAN routing via router-on-a-stick, dynamic IP allocation through DHCP, and OSPF for internal route advertisement.`,
     tech: ['Cisco Packet Tracer', 'Network basics', 'VLAN', 'IP'],
     
-    videoUrl: '/portfolio/videos/Network Project.mp4',
+    videoUrl: 'https://www.youtube.com/watch?v=nXG9uGNDZCA',
     thumbnail: null,
     gifUrl: '/portfolio/gifs/Networks-demo.gif',
 

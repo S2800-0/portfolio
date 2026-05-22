@@ -1,8 +1,16 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Calendar, Tag, FileCode, Play, Download } from 'lucide-react';
+import { X, ExternalLink, Calendar, Tag, FileCode, Play } from 'lucide-react';
 import { useState } from 'react';
 import NotebookViewer from './NotebookViewer';
 
+// Extract YouTube video ID from various URL formats
+const getYouTubeID = (url) => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+};
+
+// Inline GitHub icon
 const GithubIcon = ({ size = 18 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
@@ -16,12 +24,18 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   // Check what's available
-  const hasGif = !!project.gifUrl;
   const hasVideo = !!project.videoUrl;
+  const hasGif = !!project.gifUrl;
   const hasCode = project.codeFiles && project.codeFiles.length > 0;
   const hasResources = project.resources && project.resources.length > 0;
   const hasGithub = !!project.githubUrl;
   const hasLive = !!project.liveUrl;
+
+  // Check if it's a YouTube URL
+  const isYouTube = hasVideo && (
+    project.videoUrl.includes('youtube.com') || 
+    project.videoUrl.includes('youtu.be')
+  );
 
   return (
     <>
@@ -49,22 +63,34 @@ const ProjectModal = ({ project, onClose }) => {
               <X size={20} />
             </button>
 
-            {/* Video Section - ONLY if videoUrl is provided */}
+            {/* Video Section - YouTube or Local */}
             {hasVideo && (
               <div className="relative aspect-video bg-primary">
-                <video
-                  src={project.videoUrl}
-                  controls
-                  autoPlay
-                  muted
-                  loop
-                  className="w-full h-full object-cover"
-                  controlsList="nodownload"
-                />
+                {isYouTube ? (
+                  /* YouTube Embed */
+                  <iframe
+                    src={`https://www.youtube.com/embed/${getYouTubeID(project.videoUrl)}?autoplay=0&rel=0`}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title={project.title}
+                  />
+                ) : (
+                  /* Local Video */
+                  <video
+                    src={project.videoUrl}
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                    className="w-full h-full object-cover"
+                    controlsList="nodownload"
+                  />
+                )}
               </div>
             )}
 
-            {/* GIF Banner - ONLY if no video but has GIF */}
+            {/* GIF Banner - only if no video but has GIF */}
             {!hasVideo && hasGif && (
               <div className="relative h-64 bg-primary overflow-hidden">
                 <img 
@@ -120,7 +146,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               </div>
 
-              {/* Notebook Files - ONLY if available */}
+              {/* Notebook Files - only if available */}
               {hasCode && (
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-white mb-3">Notebook Files</h3>
@@ -142,7 +168,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               )}
 
-              {/* Resources - ONLY if available */}
+              {/* Resources - only if available */}
               {hasResources && (
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-white mb-3">Resources</h3>
@@ -165,7 +191,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </div>
               )}
 
-              {/* Links - ONLY if available */}
+              {/* Links - only if available */}
               <div className="flex gap-4 flex-wrap">
                 {hasGithub && (
                   <a
