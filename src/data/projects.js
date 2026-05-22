@@ -22,7 +22,7 @@ export const projects = [
     liveUrl: null,
     
     category: 'DEPI Data Science Internship',
-    date: '2025',
+    date: 'April 2026',
     status: 'completed'
   },
   
@@ -48,7 +48,7 @@ export const projects = [
     liveUrl: null,
     
     category: 'DEPI Data Science Internship',
-    date: '2025',
+    date: 'April 2026',
     status: 'completed'
   },
   
@@ -74,7 +74,7 @@ export const projects = [
     liveUrl: null,
     
     category: 'DEPI Data Science Internship',
-    date: '2025',
+    date: 'May 2026',
     status: 'completed'
   },
   
@@ -100,7 +100,7 @@ export const projects = [
     liveUrl: null,
     
     category: 'DEPI Data Science Internship',
-    date: '2025',
+    date: 'May 2026',
     status: 'completed'
   },
 
@@ -112,14 +112,14 @@ export const projects = [
     fullDesc: `Designed end-to-end ERD schemas and built scalable REST APIs with TypeORM/PostgreSQL, ensuring clean data structures for complex relational datasets. Integrated third-party APIs to aggregate real-time movie and actor data, enabling dynamic analytics and search functionality. Translated Figma wireframes into responsive UI components while maintaining data integrity across frontend and backend systems.`,
     tech: ['React', 'Nest.js', 'TypeORM', 'PostgreSQL', 'Figma', 'Git/GitHub'],
     
-    videoUrl: null,
+    videoUrl: '/portfolio/videos/minly-demo.mp4',
     thumbnail: null,
     gifUrl: '/portfolio/gifs/minly-demo.gif',
     
     codeFiles: [],
     
     resources: [
-      { name: 'Full video', url: '/portfolio/videos/minly-demo.mp4' }
+      
     ],
     
     githubUrl: 'https://github.com/S2800-0/FullStack-Movie-Database',
@@ -199,19 +199,22 @@ export const projects = [
   
   {
     id: 9,
-    title: 'Real-Time Sign Language Recognition',
-    shortDesc: 'AI-powered sign language translator using computer vision',
-    fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and real-time recognition. Built a robust computer vision pipeline utilizing OpenCV and ImageDataGenerator for real-time frame capture, preprocessing, and model inference.`,
+    title: ' Sign Language Recognition',
+    shortDesc: 'Sign language translator using computer vision',
+    fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and quick recognition.`,
     tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'MobileNetV2'],
     
     videoUrl: null,
     thumbnail: null,
+    gifUrl: 'public/gifs/sign-language-demo.gif',
     
-    codeFiles: [],
+    codeFiles: [
+       { name: 'Sign-language.ipynb', url: '/portfolio/code/Sign-language/Sign-language.ipynb' }
+    ],
     
     resources: [],
     
-    githubUrl: 'https://github.com/S2800-0/sign-language',
+    githubUrl: 'https://github.com/S2800-0/Sign-Language-Bridge',
     liveUrl: null,
     
     category: 'Technical Projects',
@@ -227,7 +230,7 @@ export const projects = [
     fullDesc: `The deep learning algorithms chosen for the project are CNN and the pretrained model ResNet-50. CNN was considered due to its ability to recognize spatial hierarchies, capture details and patterns in chest X-rays, and effectively differentiate between normal and lung-infected chest X-rays. ResNet-50 has an architecture with 50 layers, trained on ImageNet. ResNet-50 was chosen for the research due to its deep architecture and ability to learn the features that are complex in the images.`,
     tech: ['CNN', 'ResNet-50', 'VGG16', 'Algorithms', 'CustomCNN'],
     
-    videoUrl: null,
+    videoUrl: '/portfolio/videos/P_detction-Demo.mp4',
     thumbnail: null,
     gifUrl: '/portfolio/gifs/P_detection.gif',
 
@@ -236,7 +239,7 @@ export const projects = [
     ],
     
     resources: [,
-      { name: 'Full Video' , url: '/portfolio/videos/P_detction-Demo.mp4' },
+      
       { name: 'Dataset' , url: 'https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia'},
     ],
     
@@ -255,18 +258,18 @@ export const projects = [
     fullDesc: `Designed and implemented a spell checker desktop application in C++ with Qt Creator, integrating a GUI with real-time spelling validation and dynamic suggestion lists for user-friendly interaction. Added support for real-time spelling validation and automated suggestion generation, improving text accuracy and user experience.`,
     tech: ['C++', 'Qt Creator', 'Qt Widgets', 'Algorithms'],
     
-    videoUrl: null,
+    videoUrl: '/portfolio/videos/spell-checker-demo.mp4',
     thumbnail: null,
     gifUrl: '/portfolio/gifs/spellchecker-demo.gif',
 
     codeFiles: [],
     
     resources: [
-      { name: 'SpellChecker.zip', url: '/portfolio/code/SpellChecker/HMS DS.zip' },
-      { name: 'Full Video' , url: '/portfolio/videos/spell-checker-demo.mp4' },
+      ,
+      
     ],
     
-    githubUrl: null,
+    githubUrl: 'https://github.com/S2800-0/Spell-checker',
     liveUrl: null,
     
     category: 'Technical Projects',
