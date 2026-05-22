@@ -206,7 +206,7 @@ export const projects = [
     
     videoUrl: null,
     thumbnail: null,
-    gifUrl: 'public/gifs/sign-language-demo.gif',
+    gifUrl: '/portfolio/gifs/sign-language-demo.gif',
     
     codeFiles: [
        { name: 'Sign-language.ipynb', url: '/portfolio/code/Sign-language/Sign-language.ipynb' }
