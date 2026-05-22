@@ -196,9 +196,34 @@ export const projects = [
     date: 'In Progress',
     status: 'in-progress'
   },
-  
   {
     id: 9,
+    title: 'Packet Tracer - Hotel Managment System',
+    shortDesc: 'Hotel Network System in Packet Tracer',
+    fullDesc: `  configuration of a three-floor hotel network built in Cisco Packet Tracer. The network connects nine departments across three floors using VLAN segmentation, inter-VLAN routing via router-on-a-stick, dynamic IP allocation through DHCP, and OSPF for internal route advertisement.`,
+    tech: ['Cisco Packet Tracer', 'Network basics', 'VLAN', 'IP'],
+    
+    videoUrl: '/portfolio/videos/Network Project.mp4',
+    thumbnail: null,
+    gifUrl: '/portfolio/gifs/Networks-demo.gif',
+
+    codeFiles: [],
+    
+    resources: [ 
+      {name: 'Report', url:'/portfolio/data/Hotel_Network_Configuration_Guide.docx'},
+      
+    ],
+    
+    githubUrl: 'https://github.com/S2800-0/Hotel-Managment-System-Packet-Tracer-s',
+    liveUrl: null,
+    
+    category: 'Technical Projects',
+    date: 'Dec 2024',
+    status: 'completed'
+  },
+  
+  {
+    id: 10,
     title: ' Sign Language Recognition',
     shortDesc: 'Sign language translator using computer vision',
     fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and quick recognition.`,
@@ -224,7 +249,7 @@ export const projects = [
   
 
   {
-    id: 10,
+    id: 11,
     title: 'Pneumonia Disease Detection Using Chest X-Rays',
     shortDesc: 'Real-time detction using Machine Learning and Neural Networks',
     fullDesc: `The deep learning algorithms chosen for the project are CNN and the pretrained model ResNet-50. CNN was considered due to its ability to recognize spatial hierarchies, capture details and patterns in chest X-rays, and effectively differentiate between normal and lung-infected chest X-rays. ResNet-50 has an architecture with 50 layers, trained on ImageNet. ResNet-50 was chosen for the research due to its deep architecture and ability to learn the features that are complex in the images.`,
@@ -252,7 +277,7 @@ export const projects = [
   },
 
   {
-    id: 11,
+    id: 12,
     title: 'Spell Checker Desktop Application',
     shortDesc: 'Real-time spell checker with Qt GUI and intelligent suggestions',
     fullDesc: `Designed and implemented a spell checker desktop application in C++ with Qt Creator, integrating a GUI with real-time spelling validation and dynamic suggestion lists for user-friendly interaction. Added support for real-time spelling validation and automated suggestion generation, improving text accuracy and user experience.`,
