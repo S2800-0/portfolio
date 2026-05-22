@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, FileCode, GitBranch, Clock, CheckCircle, Play } from 'lucide-react';
+import { ArrowRight, FileCode, GitBranch, Clock, CheckCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 
 const ProjectCard = ({ project, onSelect }) => {
@@ -14,13 +14,11 @@ const ProjectCard = ({ project, onSelect }) => {
   const status = statusConfig[project.status] || statusConfig['completed'];
   const StatusIcon = status.icon;
 
-  // Check what's available
   const hasGif = !!project.gifUrl;
   const hasVideo = !!project.videoUrl;
   const hasCode = project.codeFiles && project.codeFiles.length > 0;
   const hasGithub = !!project.githubUrl;
 
-  // Folder colors by category
   const categoryColors = {
     'DEPI Data Science Internship': 'from-blue-600 to-indigo-600',
     'Full-Stack Software Development Internship': 'from-emerald-500 to-teal-600',
@@ -40,43 +38,47 @@ const ProjectCard = ({ project, onSelect }) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onSelect(project)}
     >
-      {/* Media Section - GIF or Gradient Fallback */}
+      {/* Media Section */}
       <div className="relative h-48 overflow-hidden bg-primary">
         {hasGif ? (
           <>
-            {/* GIF Image */}
-            <motion.img
-              src={project.gifUrl}
-              alt={project.title}
-              className={`w-full h-full object-cover transition-opacity duration-300 ${gifLoaded ? 'opacity-100' : 'opacity-0'}`}
-              animate={{ scale: isHovered ? 1.05 : 1 }}
-              transition={{ duration: 0.4 }}
-              onLoad={() => setGifLoaded(true)}
-            />
-            
-            {/* Loading placeholder while GIF loads */}
+            {/* Loading skeleton - shows while GIF loads */}
             {!gifLoaded && (
-              <div className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br ${gradient}`}>
-                <span className="text-4xl font-bold text-white/90">{project.title.charAt(0)}</span>
+              <div className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br ${gradient} z-10`}>
+                <Loader2 size={32} className="text-white/60 animate-spin mb-3" />
+                <span className="text-xs text-white/40 font-medium">Loading preview...</span>
               </div>
             )}
 
-            {/* Play button overlay (only if video also available) */}
-            {hasVideo && isHovered && (
+            {/* Actual GIF */}
+            <motion.img
+              src={project.gifUrl}
+              alt={project.title}
+              className={`w-full h-full object-cover transition-opacity duration-500 ${gifLoaded ? 'opacity-100' : 'opacity-0'}`}
+              animate={{ scale: isHovered ? 1.05 : 1 }}
+              transition={{ duration: 0.4 }}
+              onLoad={() => setGifLoaded(true)}
+              onError={() => setGifLoaded(false)}  // Fallback on error
+            />
+
+            {/* Play overlay for video projects */}
+            {hasVideo && isHovered && gifLoaded && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="absolute inset-0 bg-black/50 flex items-center justify-center"
               >
                 <div className="flex items-center gap-2 text-white font-medium">
-                  <Play size={20} fill="white" />
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
                   <span>Watch Demo</span>
                 </div>
               </motion.div>
             )}
           </>
         ) : (
-          /* Gradient fallback when no GIF */
+          /* Gradient fallback */
           <motion.div
             className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${gradient}`}
             animate={{ scale: isHovered ? 1.05 : 1 }}
@@ -102,6 +104,16 @@ const ProjectCard = ({ project, onSelect }) => {
             <StatusIcon size={10} className={status.color} />
           </div>
         </div>
+
+        {/* Loading indicator dot - subtle hint */}
+        {hasGif && !gifLoaded && (
+          <div className="absolute bottom-3 right-3">
+            <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm">
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              <span className="text-[10px] text-gray-300">Loading</span>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Content */}
