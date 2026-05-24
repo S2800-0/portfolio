@@ -22,6 +22,13 @@ const FolderSection = ({ category, projects, onSelectProject }) => {
       hover: 'hover:border-emerald-400',
       peek: 'from-emerald-500 to-teal-600'
     },
+    'NTI Huawei Egyptian Academy Track (Artificial Intelligence)': {
+  bg: 'bg-amber-500/20',
+  border: 'border-amber-500/40',
+  text: 'text-amber-400',
+  hover: 'hover:border-amber-400',
+  peek: 'from-amber-500 to-orange-600'
+},
     'Technical Projects': {
       bg: 'bg-orange-500/20',
       border: 'border-orange-500/40',
@@ -29,6 +36,7 @@ const FolderSection = ({ category, projects, onSelectProject }) => {
       hover: 'hover:border-orange-400',
       peek: 'from-orange-500 to-red-600'
     }
+    
   };
 
   const colors = folderColors[category] || folderColors['Technical Projects'];

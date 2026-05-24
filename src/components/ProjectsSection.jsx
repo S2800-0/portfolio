@@ -11,7 +11,9 @@ const ProjectsSection = () => {
   const categories = [
     'DEPI Data Science Internship',
     'Full-Stack Software Development Internship', 
-    'Technical Projects'
+    'NTI Huawei Egyptian Academy Track (Artificial Intelligence)',
+    'Technical Projects',
+    
   ];
 
   const groupedProjects = categories.map(cat => ({

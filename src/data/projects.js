@@ -225,30 +225,6 @@ export const projects = [
     status: 'completed'
   },
   
-  {
-    id: 10,
-    title: ' Sign Language Recognition',
-    shortDesc: 'Sign language translator using computer vision',
-    fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and quick recognition.`,
-    tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'MobileNetV2'],
-    
-    videoUrl: null,
-    thumbnail: null,
-    gifUrl: '/portfolio/gifs/sign-language-demo.gif',
-    
-    codeFiles: [
-       { name: 'Sign-language.ipynb', url: '/portfolio/code/Sign-language/Sign-language.ipynb' }
-    ],
-    
-    resources: [],
-    
-    githubUrl: 'https://github.com/S2800-0/Sign-Language-Bridge',
-    liveUrl: null,
-    
-    category: 'Technical Projects',
-    date: 'Sept 2025',
-    status: 'completed'
-  },
   
 
   {
@@ -302,6 +278,31 @@ export const projects = [
     
     category: 'Technical Projects',
     date: 'Dec 2024',
+    status: 'completed'
+  },
+
+  {
+    id: 13,
+    title: ' Sign Language Recognition',
+    shortDesc: 'Sign language translator using computer vision',
+    fullDesc: `Developed an end-to-end classification system using MobileNetV2 and TensorFlow/Keras with custom Dense layers and Softmax activation for multi-class sign categorization and quick recognition.`,
+    tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'MobileNetV2'],
+    
+    videoUrl: null,
+    thumbnail: null,
+    gifUrl: '/portfolio/gifs/sign-language-demo.gif',
+    
+    codeFiles: [
+       { name: 'Sign-language.ipynb', url: '/portfolio/code/Sign-language/Sign-language.ipynb' }
+    ],
+    
+    resources: [],
+    
+    githubUrl: 'https://github.com/S2800-0/Sign-Language-Bridge',
+    liveUrl: null,
+    
+    category: 'NTI Huawei Egyptian Academy Track (Artificial Intelligence)',
+    date: 'Sept 2025',
     status: 'completed'
   },
 ];
