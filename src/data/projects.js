@@ -141,8 +141,9 @@ export const projects = [
     fullDesc: `Building a production-grade market data pipeline that ingests real-time financial data, processes it through Kafka/Redis streams, stores in TimescaleDB, and exposes via REST API. `,
     tech: ['Python', 'SQL', 'Kafka', 'Redis', 'TimescaleDB', 'FastAPI'],
     
-    videoUrl: null,
+    videoUrl: 'https://www.youtube.com/watch?v=JrZtGPVZURY',
     thumbnail: null,
+    gifUrl: '/portfolio/gifs/epl-pl.gif',
     
     codeFiles: [],
     
