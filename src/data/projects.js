@@ -148,12 +148,12 @@ export const projects = [
     
     resources: [],
     
-    githubUrl: 'https://github.com/S2800-0/market-data-pipeline',
+    githubUrl: 'https://github.com/S2800-0/market-data-pl',
     liveUrl: null,
     
     category: 'Technical Projects',
-    date: 'In Progress',
-    status: 'in-progress'
+    date: 'May 2026',
+    status: 'completed'
   },
   
   {
