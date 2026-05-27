@@ -282,6 +282,34 @@ export const projects = [
     date: 'Dec 2024',
     status: 'completed'
   },
+  {
+    id: 14,
+    title: 'Industrial Defect Detection System',
+    shortDesc: 'Pipeline for automated industrial surface defect detection.',
+    fullDesc: `The system combines a custom Convolutional Neural Network (CNN) classifier trained on the Northeastern University Surface Defect Database (NEU-DET) with an interactive Streamlit web application for real-time quality control inspection.`,
+    tech: ['Python', 'cnn', 'image-classification', 'machine-learning', 'streamlit', 'pytorch', 'deep-learning', 'computer-vision'],
+    
+    videoUrl: 'https://www.youtube.com/watch?v=bPsUI98Q60o',
+    thumbnail: null,
+    gifUrl: '/portfolio/gifs/conveyor belt.gif',
+    
+    codeFiles: [],
+    
+    resources: [
+      {name: 'Dataset' , url : 'https://www.kaggle.com/datasets/kaustubhdikshit/neu-surface-defect-database'},
+      {name: 'Presentaion' , url : '/portfolio/data/NEU Surface Defect Detection System.pptx'},
+      {name: 'Report' , url : '/portfolio/data/Industrial_Defect_Detection_Report.docx'},
+
+
+    ],
+    
+    githubUrl: 'https://github.com/S2800-0/Sign-Language-Bridge',
+    liveUrl: null,
+    
+    category: 'Technical Projects',
+    date: 'May 2026',
+    status: 'completed'
+  },
 
   {
     id: 13,
@@ -298,7 +326,9 @@ export const projects = [
        { name: 'Sign-language.ipynb', url: '/portfolio/code/Sign-language/Sign-language.ipynb' }
     ],
     
-    resources: [],
+    resources: [
+      {name: 'Dataset' , url : 'https://www.kaggle.com/datasets/ayuraj/asl-dataset/data'}
+    ],
     
     githubUrl: 'https://github.com/S2800-0/Sign-Language-Bridge',
     liveUrl: null,
@@ -307,4 +337,5 @@ export const projects = [
     date: 'Sept 2025',
     status: 'completed'
   },
+  
 ];
