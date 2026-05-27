@@ -1,6 +1,27 @@
 export const projects = [
   // ========== DEPI DATA SCIENCE INTERNSHIP ==========
   {
+    id: 8,
+    title: '[WIP] Finance Dashboard',
+    shortDesc: 'End-to-end finance dashboard ',
+    fullDesc: `Building a real-time finance dashboard with React frontend, Node.js backend, and PostgreSQL database. Features portfolio tracking, P&L visualization, risk metrics, and alert system.`,
+    tech: ['React', 'Node.js', 'PostgreSQL', 'D3.js', 'WebSockets', 'Docker'],
+    
+    videoUrl: null,
+    thumbnail: null,
+    
+    codeFiles: [],
+    
+    resources: [],
+    
+    githubUrl: 'https://github.com/S2800-0/finance-dashboard',
+    liveUrl: null,
+    
+    category: 'DEPI Data Science Internship',
+    date: 'In Progress',
+    status: 'in-progress'
+  },
+  {
     id: 1,
     title: 'SuperStore Sales & Profit Analysis',
     shortDesc: 'End-to-end retail data analysis with outlier detection and feature engineering',
@@ -179,27 +200,7 @@ export const projects = [
     status: 'in-progress'
   },
   
-  {
-    id: 8,
-    title: '[WIP] Finance Dashboard',
-    shortDesc: 'End-to-end finance dashboard ',
-    fullDesc: `Building a real-time finance dashboard with React frontend, Node.js backend, and PostgreSQL database. Features portfolio tracking, P&L visualization, risk metrics, and alert system.`,
-    tech: ['React', 'Node.js', 'PostgreSQL', 'D3.js', 'WebSockets', 'Docker'],
-    
-    videoUrl: null,
-    thumbnail: null,
-    
-    codeFiles: [],
-    
-    resources: [],
-    
-    githubUrl: 'https://github.com/S2800-0/finance-dashboard',
-    liveUrl: null,
-    
-    category: 'Technical Projects',
-    date: 'In Progress',
-    status: 'in-progress'
-  },
+  
   {
     id: 9,
     title: 'Packet Tracer - Hotel Managment System',
