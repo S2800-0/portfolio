@@ -134,7 +134,7 @@ export const projects = [
     title: 'Minly - Movie Database Platform',
     shortDesc: 'Full-stack movie database with REST APIs and real-time data aggregation',
     fullDesc: `Designed end-to-end ERD schemas and built scalable REST APIs with TypeORM/PostgreSQL, ensuring clean data structures for complex relational datasets. Integrated third-party APIs to aggregate real-time movie and actor data, enabling dynamic analytics and search functionality. Translated Figma wireframes into responsive UI components while maintaining data integrity across frontend and backend systems.`,
-    tech: ['React', 'Nest.js', 'TypeORM', 'PostgreSQL', 'Figma', 'Git/GitHub'],
+    tech: ['React', 'Nest.js', 'TypeORM', 'PostgreSQL','PostMan','Figma', 'Git/GitHub'],
     
     videoUrl: '/portfolio/videos/minly-demo.mp4',
     thumbnail: null,
